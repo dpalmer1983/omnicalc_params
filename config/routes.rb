@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get("/flexible/square/:number", {:controller => "calculations", :action => "flexible_square"})
 
     #square root
-    get("/flexible/squareroot/:number", {:controller => "calculations", :action => "flexible_squareroot"})
+    get("/flexible/square_root/:number", {:controller => "calculations", :action => "flexible_square_root"})
 
     #payment
     get("/flexible/payment/:apr/:year/:principle", {:controller => "calculations", :action => "flexible_payment"})
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     #square form
     get("/square/new", {:controller => "calculations", :action => "square_form"})
     #square root form
-    get("/squareroot/new", {:controller => "calculations", :action => "squareroot_form"})
+    get("/square_root/new", {:controller => "calculations", :action => "square_root_form"})
     #oayment form
     get("/payment/new", {:controller => "calculations", :action => "payment_form"})
     #random form
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     #square results
     get("/square/results", {:controller => "calculations", :action => "square_results"})
     #squareroot results
-    get("/squareroot/results", {:controller => "calculations", :action => "squareroot_results"})
+    get("/square_root/results", {:controller => "calculations", :action => "square_root_results"})
     #payment results
     get("/payment/results", {:controller => "calculations", :action => "payment_results"})
     #random results

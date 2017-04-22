@@ -4,8 +4,8 @@ class CalculationsController < ApplicationController
   def square_form
     render("calculations/square_form.html.erb")
   end
-  def squareroot_form
-    render("calculations/squareroot_form.html.erb")
+  def square_root_form
+    render("calculations/square_root_form.html.erb")
   end
   def payment_form
     render("calculations/payment_form.html.erb")
@@ -23,13 +23,13 @@ class CalculationsController < ApplicationController
     render("calculations/square_results.html.erb")
   end
 
-  def squareroot_results
+  def square_root_results
     # parameters: {number"=>"8"}
     @user_numsq = params["user_numsq"].to_f  #load it in as a float variable
 
     @user_squareroot = (@user_numsq ** 0.5)
 
-    render("calculations/squareroot_results.html.erb")
+    render("calculations/square_root_results.html.erb")
   end
 
   def payment_results
@@ -39,7 +39,7 @@ class CalculationsController < ApplicationController
     @user_principle = params["principle"].to_f  #load it in as a float variable
 
     #mortgage calculations
-    @user_monthly_payment = ((((@user_apr/10000)/12) * @user_principle) / (1 - (1 + ((@user_apr/10000)/12)) ** ( -(@user_year * 12))))
+    @user_monthly_payment = ((((@user_apr/100)/12) * @user_principle) / (1 - (1 + ((@user_apr/100)/12)) ** ( -(@user_year * 12))))
 
     render("calculations/payment_results.html.erb")
   end

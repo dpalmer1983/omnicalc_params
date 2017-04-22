@@ -1,34 +1,32 @@
-<h1>Calculate Monthly Payments</h1>
+<h1>Payment Calculation</h1>
 
 <!-- forms must have label, form, and button -->
 
 <form action="/payment/results">
   <div>
     <label>
-      Enter an Annual Percentage Rate (APR) :-)
+      APR
     </label>
+        <input type="text" name="apr" placeholder="E.g. 5.42">
   </div>
-  <div>
-    <input type="text" name="apr">
-  </div>
+
   <div>
     <label>
-      Enter the numbe of Years for the loan :-)
+      Number of years
     </label>
+        <input type="text" name="year" placeholder="How many years to repay?">
   </div>
-  <div>
-    <input type="text" name="year">
-  </div>
+
+
   <div>
     <label>
-      Enter the loan amount (principle) :-)
+      Principal
     </label>
+        <input type="text" name="principle" placeholder="How much principal?">
   </div>
+
   <div>
-    <input type="text" name="principle">
-  </div>
-  <div>
-    <button>Calculate the Monthly Payment</button>
+    <button>Calculate monthly payment</button>
   </div>
 
 
