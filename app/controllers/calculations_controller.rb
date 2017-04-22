@@ -1,16 +1,29 @@
 class CalculationsController < ApplicationController
 
+##### FORMS #####
   def square_form
     render("calculations/square_form.html.erb")
   end
+  def squareroot_form
+    render("calculations/squareroot_form.html.erb")
+  end
+  def payment_form
+    render("calculations/payment_form.html.erb")
+  end
+  def random_form
+    render("calculations/random_form.html.erb")
+  end
 
+
+
+##### RESULTS #####
   def square_results
     #parameters: ("User_num"=>"22")
     @user_num = params[:user_num].to_f
     render("calculations/square_results.html.erb")
   end
 
-
+##### EXAMPLES #####
   def flexible_square
     # parameters: {number"=>"8"}
     @user_num = params["number"].to_f  #load it in as a float variable
@@ -22,9 +35,9 @@ class CalculationsController < ApplicationController
 
   def flexible_squareroot
     # parameters: {number"=>"8"}
-    @user_num = params["number"].to_f  #load it in as a float variable
+    @user_numsq = params["number"].to_f  #load it in as a float variable
 
-    @user_squareroot = (@user_num ** 0.5)
+    @user_squareroot = (@user_numsq ** 0.5)
 
     render("calculations/flexible_squareroot.html.erb")
   end

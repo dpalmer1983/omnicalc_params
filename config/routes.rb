@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   Rails.application.routes.draw do
 
+########EXAMPLES############
     #squared
     get("/flexible/square/:number", {:controller => "calculations", :action => "flexible_square"})
 
@@ -13,12 +14,22 @@ Rails.application.routes.draw do
     get("/flexible/payment/:apr/:year/:principle", {:controller => "calculations", :action => "flexible_payment"})
 
     #random number
-    get("/flexible/random/:min_num/:max_num", {:controller => "calculations", :action => "flexible_random_number"})
+    get("/flexible/random/:min_num/:max_numx", {:controller => "calculations", :action => "flexible_random_number"})
 
+###### FORMS ###########
 
     #square form
     get("/square/new", {:controller => "calculations", :action => "square_form"})
+    #square root form
+    get("/squareroot/new", {:controller => "calculations", :action => "squareroot_form"})
+    #oayment form
+    get("/payment/new", {:controller => "calculations", :action => "payment_form"})
+    #random form
+    get("/random/new", {:controller => "calculations", :action => "random_form"})
 
+
+
+####### RESULTS ######
     #square results
     get("/square/results", {:controller => "calculations", :action => "square_results"})
 
