@@ -77,7 +77,7 @@
 
       <h1>Payment Calculator</h1>
 
-      <p> A <%= @user_year %> year loan of <%= number_to_currency(@user_principal) %>, with an annual interest rate of <%= @user_apr/100 %>%, requires a monthly payment of <%= number_to_currency(@user_monthly_payment) %>. </p>
+      <p> A <%= @user_year %> year loan of <%= number_to_currency(@user_principal) %>, with an annual interest rate of <%= number_to_percentage(@user_apr) %>, requires a monthly payment of <%= number_to_currency(@user_monthly_payment) %>. </p>
       <!-- <%= @user_year  %>
       <%= @user_principle  %>
       <%= @user_apr  %>

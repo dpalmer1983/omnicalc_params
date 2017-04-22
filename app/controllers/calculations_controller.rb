@@ -35,11 +35,11 @@ class CalculationsController < ApplicationController
   def payment_results
     # parameters: {number"=>"8"}
     @user_apr = params["apr"].to_f  #load it in as a float variable
-    @user_year = params["year"].to_f  #load it in as an float variable
-    @user_principle = params["principle"].to_f  #load it in as a float variable
+    @user_year = params["years"].to_f  #load it in as an float variable
+    @user_principle = params["principal"].to_f  #load it in as a float variable
 
     #mortgage calculations
-    @user_monthly_payment = ((((@user_apr/100)/12) * @user_principle) / (1 - (1 + ((@user_apr/100)/12)) ** ( -(@user_year * 12))))
+    @user_monthly_payment = ((((@user_apr/100)/12) * @user_principal) / (1 - (1 + ((@user_apr/100)/12)) ** ( -(@user_year * 12))))
 
     render("calculations/payment_results.html.erb")
   end
@@ -63,7 +63,7 @@ class CalculationsController < ApplicationController
 ##### EXAMPLES #####
   def flexible_square
     # parameters: {number"=>"8"}
-    @user_num = params["number"].to_f  #load it in as a float variable
+    @user_num = params[:number].to_f  #load it in as a float variable
 
     @user_square = (@user_num ** 2)
 
@@ -72,7 +72,7 @@ class CalculationsController < ApplicationController
 
   def flexible_square_root
     # parameters: {number"=>"8"}
-    @user_numsq = params["number"].to_f  #load it in as a float variable
+    @user_numsq = params[:number].to_f  #load it in as a float variable
 
     @user_squareroot = (@user_numsq ** 0.5)
 
@@ -81,20 +81,20 @@ class CalculationsController < ApplicationController
 
   def flexible_payment
     # parameters: {number"=>"8"}
-    @user_apr = params["apr"].to_f  #load it in as a float variable
-    @user_year = params["year"].to_f  #load it in as an float variable
-    @user_principle = params["principle"].to_f  #load it in as a float variable
+    @user_apr = params[:apr].to_f  #load it in as a float variable
+    @user_year = params[:years].to_f  #load it in as an float variable
+    @user_principle = params[:principal].to_f  #load it in as a float variable
 
     #mortgage calculations
-    @user_monthly_payment = ((((@user_apr/10000)/12) * @user_principle) / (1 - (1 + ((@user_apr/10000)/12)) ** ( -(@user_year * 12))))
+    @user_monthly_payment = ((((@user_apr/10000)/12) * @user_principal) / (1 - (1 + ((@user_apr/10000)/12)) ** ( -(@user_year * 12))))
 
     render("calculations/flexible_payment.html.erb")
   end
 
   def flexible_random_number
     # parameters: {number"=>"8"}
-    @min_num = params["min_num"].to_f  #load it in as a float variable
-    @max_num = params["max_num"].to_f  #load it in as an float variable
+    @min_num = params[:min_num].to_f  #load it in as a float variable
+    @max_num = params[:max_num].to_f  #load it in as an float variable
 
     #random number calculations
     @random_number = rand(@max_num-@min_num)+@min_num
