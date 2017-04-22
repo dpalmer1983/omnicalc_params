@@ -1,28 +1,112 @@
-<h1>Payment Results</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>
+              Part I Targets
+            </th>
+            <td>
+              <a href="/flexible/square/5">
+                Flexible Square Example
+              </a>
+            </td>
+            <td>
+              <a href="/flexible/square_root/8">
+                Flexible Square Root Example
+              </a>
+            </td>
+            <td>
+              <a href="/flexible/payment/410/30/250000">
+                Flexible Payment Example
+              </a>
+            </td>
+            <td>
+              <a href="/flexible/random/50/100">
+                Flexible Random Example
+              </a>
+            </td>
+          </tr>
+          <tr>
 
-<div>
-  <b>APR</b>
-</div>
-<div>
-  <p><%= @user_apr.round(4) %>%</p>
-</div>
 
-<div>
-  <b>Number of years</b>
-</div>
-<div>
-  <p><%= @user_year.round(1) %></p>
-</div>
+            <th>
+              Part II Targets
+            </th>
+            <td>
+              <a href="/square/new">
+                Square Form
+              </a>
+            </td>
+            <td>
+              <a href="/square_root/new">
+                Square Root Form
+              </a>
+            </td>
+            <td>
+              <a href="/payment/new">
+                Payment Form
+              </a>
+            </td>
+            <td>
+              <a href="/random/new">
+                Random Form
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Part III Targets
+            </th>
+            <td>
+              <a href="/word_count/new">
+                Word Count Form
+              </a>
+            </td>
+            <td>
+              <a href="/descriptive_stats/new">
+                Stats Form
+              </a>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
 
-<div>
-  <b>Principal</b>
-</div>
-<div>
-  <p>$<%= @user_principle.round(2) %></p>
-</div>
-<div>
-  <b>Payment</b>
-</div>
-<div>
-  <p>$<%= @user_monthly_payment.round(2) %></p>
+
+      <h1>Payment Results</h1>
+
+      <div>
+        <b>APR</b>
+      </div>
+      <div>
+        <p><%= @user_apr %>%</p>
+      </div>
+
+      <div>
+        <b>Number of years</b>
+      </div>
+      <div>
+        <p><%= @user_year %></p>
+      </div>
+
+      <div>
+        <b>Principal</b>
+      </div>
+      <div>
+        <p><%= number_to_currency(@user_principal) %></p>
+      </div>
+      <div>
+        <b>Payment</b>
+      </div>
+      <div>
+        <p><%= number_to_currency(@user_monthly_payment) %></p>
+      </div>
+      <div>
+      </div>
+      <a href="/payment/new">
+        Calculate another payment
+      </a>
+    </div>
+  </div>
 </div>

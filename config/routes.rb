@@ -11,10 +11,10 @@ Rails.application.routes.draw do
     get("/flexible/square_root/:number", {:controller => "calculations", :action => "flexible_square_root"})
 
     #payment
-    get("/flexible/payment/:apr/:year/:principle", {:controller => "calculations", :action => "flexible_payment"})
+    get("/flexible/payment/:apr/:years/:principal", {:controller => "calculations", :action => "flexible_payment"})
 
     #random number
-    get("/flexible/random/:min_num/:max_numx", {:controller => "calculations", :action => "flexible_random_number"})
+    get("/flexible/random/:min_num/:max_num", {:controller => "calculations", :action => "flexible_random_number"})
 
 ###### FORMS ###########
 
