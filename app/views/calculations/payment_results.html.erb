@@ -18,11 +18,11 @@
   <b>Principal</b>
 </div>
 <div>
-  <p><%= number_to_currency(@user_principal) %></p>
+  <p>$<%= @user_principle.round(2) %></p>
 </div>
 <div>
   <b>Payment</b>
 </div>
 <div>
-  <p><%= number_to_currency(@user_monthly_payment) %></p>
+  <p>$<%= @user_monthly_payment.round(2) %></p>
 </div>
