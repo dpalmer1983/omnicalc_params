@@ -70,13 +70,13 @@ class CalculationsController < ApplicationController
     render("calculations/flexible_square.html.erb")
   end
 
-  def flexible_squareroot
+  def flexible_square_root
     # parameters: {number"=>"8"}
     @user_numsq = params["number"].to_f  #load it in as a float variable
 
     @user_squareroot = (@user_numsq ** 0.5)
 
-    render("calculations/flexible_squareroot.html.erb")
+    render("calculations/flexible_square_root.html.erb")
   end
 
   def flexible_payment
