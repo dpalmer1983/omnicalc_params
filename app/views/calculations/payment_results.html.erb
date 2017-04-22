@@ -1,3 +1,28 @@
-<h1>Payment Calculator</h1>
+<h1>Payment Results</h1>
 
-<p> A <%= @user_year %> year loan of $<%= @user_principle %>, with an annual interest rate of <%= @user_apr %>%, requires a monthly payment of $<%= @user_monthly_payment %>. </p>
+<div>
+  <b>APR</b>
+</div>
+<div>
+  <p><%= @user_apr.round(4) %>%</p>
+</div>
+
+<div>
+  <b>Number of years</b>
+</div>
+<div>
+  <p><%= @user_year.round(1) %></p>
+</div>
+
+<div>
+  <b>Principal</b>
+</div>
+<div>
+  <p>$<%= @user_principle.round(2) %></p>
+</div>
+<div>
+  <b>Payment</b>
+</div>
+<div>
+  <p>$<%= @user_monthly_payment.round(2) %></p>
+</div>
