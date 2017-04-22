@@ -32,7 +32,12 @@ Rails.application.routes.draw do
 ####### RESULTS ######
     #square results
     get("/square/results", {:controller => "calculations", :action => "square_results"})
-
+    #squareroot results
+    get("/squareroot/results", {:controller => "calculations", :action => "squareroot_results"})
+    #payment results
+    get("/payment/results", {:controller => "calculations", :action => "payment_results"})
+    #random results
+    get("/random/results", {:controller => "calculations", :action => "random_results"})
 
 
   end
