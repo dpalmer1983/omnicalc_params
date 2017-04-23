@@ -1,6 +1,6 @@
 class CalculationsController < ApplicationController
 
-##### FORMS #####
+  ##### FORMS #####
   def square_form
     render("calculations/square_form.html.erb")
   end
@@ -16,7 +16,7 @@ class CalculationsController < ApplicationController
 
 
 
-##### RESULTS #####
+  ##### RESULTS #####
   def square_results
     #parameters: ("User_num"=>"22")
     @user_num = params[:user_num].to_f
@@ -35,11 +35,12 @@ class CalculationsController < ApplicationController
   def payment_results
     # parameters: {number"=>"8"}
     @user_apr = params["apr"].to_f  #load it in as a float variable
+    @monthly_apr = ((@user_apr/100)/12)  #convert to monthly and round to 4 digits
     @user_year = params["years"].to_f  #load it in as an float variable
     @user_principal = params["principal"].to_f  #load it in as a float variable
 
     #mortgage calculations
-    @user_monthly_payment = ((((@user_apr/100)/12) * @user_principal) / (1 - (1 + ((@user_apr/100)/12)) ** ( -(@user_year * 12))))
+    @user_monthly_payment = ((((@monthly_apr * @user_principal)) / ((1 - (1 + (@monthly_apr)) ** ( -(@user_year * 12))))))
 
     render("calculations/payment_results.html.erb")
   end
@@ -60,7 +61,7 @@ class CalculationsController < ApplicationController
 
 
 
-##### EXAMPLES #####
+  ##### EXAMPLES #####
   def flexible_square
     # parameters: {number"=>"8"}
     @user_num = params[:number].to_f  #load it in as a float variable
