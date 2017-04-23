@@ -82,8 +82,8 @@ class CalculationsController < ApplicationController
   def flexible_payment
     # parameters: {number"=>"8"}
     @user_apr = params[:apr].to_f  #load it in as a float variable
-    @user_year = params[:years].to_f  #load it in as an float variable
-    @user_principle = params[:principal].to_f  #load it in as a float variable
+    @user_year = params[:years].to_i  #load it in as an float variable
+    @user_principal = params[:principal].to_f  #load it in as a float variable
 
     #mortgage calculations
     @user_monthly_payment = ((((@user_apr/10000)/12) * @user_principal) / (1 - (1 + ((@user_apr/10000)/12)) ** ( -(@user_year * 12))))
