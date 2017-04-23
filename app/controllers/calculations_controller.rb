@@ -36,7 +36,7 @@ class CalculationsController < ApplicationController
     # parameters: {number"=>"8"}
     @user_apr = params["apr"].to_f  #load it in as a float variable
     @user_year = params["years"].to_f  #load it in as an float variable
-    @user_principle = params["principal"].to_f  #load it in as a float variable
+    @user_principal = params["principal"].to_f  #load it in as a float variable
 
     #mortgage calculations
     @user_monthly_payment = ((((@user_apr/100)/12) * @user_principal) / (1 - (1 + ((@user_apr/100)/12)) ** ( -(@user_year * 12))))
@@ -81,12 +81,13 @@ class CalculationsController < ApplicationController
 
   def flexible_payment
     # parameters: {number"=>"8"}
-    @user_apr = params[:apr].to_f  #load it in as a float variable
+    @basis_points = params[:apr].to_f  #load it in as a float variable
+    @user_apr = (@basis_points/100)  #convert basis points to apr
     @user_year = params[:years].to_i  #load it in as an float variable
     @user_principal = params[:principal].to_f  #load it in as a float variable
 
     #mortgage calculations
-    @user_monthly_payment = ((((@user_apr/10000)/12) * @user_principal) / (1 - (1 + ((@user_apr/10000)/12)) ** ( -(@user_year * 12))))
+    @user_monthly_payment = ((((@user_apr/100)/12) * @user_principal) / (1 - (1 + ((@user_apr/100)/12)) ** ( -(@user_year * 12))))
 
     render("calculations/flexible_payment.html.erb")
   end
